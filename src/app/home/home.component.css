@@ -1,0 +1,41 @@
+main {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin-left: 12.25%;
+}
+#proucts2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 25% 1rem 25%;
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 1rem;
+}
+
+h2 {
+  color: #da001e;
+  text-decoration: underline #151217;
+}
+
+button {
+  width: 50%;
+  margin: 0 25% 0 25%;
+  background-color: #da001e;
+  border-radius: 25px;
+  font-size: large;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    display: flex;
+  }
+  #proucts1 {
+    display: flex;
+  }
+  #proucts2 {
+    margin: 2rem;
+  }
+}

@@ -1,28 +1,28 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  presentation = "“Au petit village” est une entreprise qui confectionne des figurines inspirées de la bande dessinée Astérix et Obélix";
+  presentation =
+    '“Au petit village” est une entreprise qui confectionne des figurines inspirées de la bande dessinée Astérix et Obélix';
 
-  products = [
-    { name: 'Figurine Astérix', price: 20, image: 'assets/figurine-asterix.jpg' },
-    { name: 'Figurine Obélix', price: 18, image: 'assets/figurine-obelix.jpg' },
-    { name: 'Figurine Idéfix', price: 15, image: 'assets/figurine-idefix.jpg' },
-  ];
+  products: any[];
 
   searchTerm: string = '';
   sortBy: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private productService: ProductService) {
+    this.products = this.productService.getProducts();
+  }
 
   viewProductDetail(product: any) {
     const navigationExtras = {
-      state: { product, price: product.price }
+      state: { product, price: product.price },
     };
     this.router.navigate(['/product', product.name], navigationExtras);
   }

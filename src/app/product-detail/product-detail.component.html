@@ -1,7 +1,20 @@
-<app-header></app-header>
-<div *ngIf="product">
-  <h2>{{ product.name }}</h2>
-  <p>Prix du produit : {{ product.price | currency:'EUR':'symbol':'1.2-2' }}</p>
-  <img [src]="product.image" alt="{{ product.name }} Image" width="300" height="300">
-</div>
-<app-footer></app-footer>
+<header>
+  <app-header></app-header>
+</header>
+<main>
+  <div *ngIf="product">
+    <h2>{{ product.name }}</h2>
+    <p>Prix : {{ product.price | currency : "EUR" : "symbol" : "1.2-2" }}</p>
+    <img
+      [src]="product.image"
+      alt="{{ product.name }} Image"
+      width="300"
+      height="300"
+    />
+    <p id="description">Déscription :</p>
+    <p id="descriptionText">{{ product.description }}</p>
+  </div>
+</main>
+<footer>
+  <app-footer></app-footer>
+</footer>

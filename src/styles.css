@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+h1,
+h2,
+h3 {
+  font-family: "Bubbleboddy Neue", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  margin: 0;
+  font-family: "Comfortaa";
+}
+
+@font-face {
+  font-family: "Bubbleboddy Neue";
+  src: url("./assets/bubbleboddyneu.woff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url("./assets/Comfortaa-Regular.woff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

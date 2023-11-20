@@ -1,28 +1,39 @@
 <header>
   <app-header></app-header>
 </header>
-<div>
-  <h2>Présentation</h2>
-  <p>{{ presentation }}</p>
-</div>
+<main>
+  <div>
+    <h2>Présentation</h2>
+    <article>{{ presentation }}</article>
+  </div>
+  <h2>Nos produits</h2>
+  <div>
+    <label for="search">Recherche par nom:</label>
+    <input type="text" [(ngModel)]="searchTerm" id="search" />
 
-<div>
-  <label for="search">Recherche par nom:</label>
-  <input type="text" [(ngModel)]="searchTerm" id="search">
-
-  <label for="sort">Trier par prix:</label>
-  <select [(ngModel)]="sortBy" id="sort" (change)="sortProducts()">
-    <option value="asc">Croissant</option>
-    <option value="desc">Décroissant</option>
-  </select>
-</div>
-
-<div *ngFor="let product of products | filter: searchTerm | sort: sortBy">
-  <h3>{{ product.name }}</h3>
-  <p>Prix : {{ product.price | currency:'EUR':'symbol':'1.2-2' }}</p>
-  <img [src]="product.image" alt="{{ product.name }} Image" width="300" height="300">
-  <button (click)="viewProductDetail(product)">Voir détail</button>
-</div>
+    <label for="sort">Trier par prix:</label>
+    <select [(ngModel)]="sortBy" id="sort" (change)="sortProducts()">
+      <option value="asc">Croissant</option>
+      <option value="desc">Décroissant</option>
+    </select>
+  </div>
+  <div id="proucts1">
+    <div
+      *ngFor="let product of products | filter : searchTerm | sort : sortBy"
+      id="proucts2"
+    >
+      <h3>{{ product.name }}</h3>
+      <p>Prix : {{ product.price | currency : "EUR" : "symbol" : "1.2-2" }}</p>
+      <img
+        [src]="product.image"
+        alt="{{ product.name }} Image"
+        width="300"
+        height="300"
+      />
+      <button (click)="viewProductDetail(product)">Voir détail</button>
+    </div>
+  </div>
+</main>
 <footer>
-<app-footer></app-footer>
+  <app-footer></app-footer>
 </footer>
