@@ -4,7 +4,7 @@ main {
   width: 75%;
   margin-left: 12.25%;
 }
-#proucts2 {
+.product2 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,10 +32,10 @@ button {
   main {
     display: flex;
   }
-  #proucts1 {
+  .product1 {
     display: flex;
   }
-  #proucts2 {
+  .product2 {
     margin: 2rem;
   }
 }

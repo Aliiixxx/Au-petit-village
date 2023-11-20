@@ -17,10 +17,10 @@
       <option value="desc">Décroissant</option>
     </select>
   </div>
-  <div id="proucts1">
+  <div class="product1">
     <div
       *ngFor="let product of products | filter : searchTerm | sort : sortBy"
-      id="proucts2"
+      class="product2"
     >
       <h3>{{ product.name }}</h3>
       <p>Prix : {{ product.price | currency : "EUR" : "symbol" : "1.2-2" }}</p>
